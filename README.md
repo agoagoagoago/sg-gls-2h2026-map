@@ -206,7 +206,7 @@ No environment variables are required.
 
 ```
 .
-├── index.html               # App shell (header, summary, layout, transparency panel)
+├── index.html               # App shell (header, summary, layout, footer)
 ├── render.yaml              # Render Static Site blueprint
 ├── package.json             # scripts + deps
 ├── tsconfig.json

@@ -41,7 +41,7 @@ npm run validate   # run only the data integrity gate (scripts/validate-data.mjs
 ## 4. Architecture / file map
 
 ```
-index.html              # App shell: header, summary cards, layout, transparency <details>, footer
+index.html              # App shell: header, summary cards, layout, footer
 render.yaml             # Render Static Site blueprint (type: web, runtime: static, publish ./dist)
 scripts/validate-data.mjs   # build-time data integrity gate (prebuild hook)
 src/
