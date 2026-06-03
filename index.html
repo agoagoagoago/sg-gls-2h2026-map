@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Interactive map of the nine Confirmed List sites in Singapore's 2H2026 Government Land Sales (GLS) Programme — proposed residential and White sites, with verified official URA parcel locations."
+    />
+    <meta name="theme-color" content="#0f2a52" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>Singapore 2H2026 GLS Programme — Confirmed List Sites</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#map">Skip to map</a>
+
+    <header class="app-header">
+      <div class="header-inner">
+        <div class="title-block">
+          <p class="eyebrow">URA Government Land Sales · 2H2026</p>
+          <h1>Singapore 2H2026 GLS Programme — Confirmed List Sites</h1>
+          <p class="subtitle">Proposed Residential and White Sites</p>
+        </div>
+        <div class="header-meta">
+          <a
+            class="source-link"
+            href="https://www.ura.gov.sg/-/media/Corporate/Media-Room/2026/Jun/pr26-41a.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            Official URA release (PDF) ↗
+          </a>
+          <p class="header-note">
+            Locations shown are based on official linked site information where verified.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section id="summary" class="summary" aria-label="Confirmed List summary totals"></section>
+
+      <section class="layout" aria-label="GLS sites map and list">
+        <div id="filters" class="filters" aria-label="Filter sites"></div>
+
+        <div class="map-panel">
+          <div id="map" role="application" aria-label="Interactive map of 2H2026 GLS Confirmed List sites"></div>
+        </div>
+
+        <aside id="site-list" class="site-list" aria-label="List of Confirmed List sites"></aside>
+      </section>
+
+      <section class="transparency" aria-label="Data sources and verification">
+        <details>
+          <summary><span>Data sources and verification</span></summary>
+          <div class="transparency-body">
+            <ul>
+              <li>
+                <strong>Site attributes</strong> (site area, GPR, estimated units, hotel rooms,
+                commercial space, launch date, sales agent) are taken from the official
+                <a
+                  href="https://www.ura.gov.sg/-/media/Corporate/Media-Room/2026/Jun/pr26-41a.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >2H2026 GLS Programme release (Appendix 1, pr26-41a.pdf)</a
+                >.
+              </li>
+              <li>
+                <strong>Locations</strong> are taken from the official site-name hyperlinks embedded
+                in that PDF. Each link opens URA's GLS map service
+                (<code>eservice.ura.gov.sg/maps</code>) for a specific site ID. The corresponding
+                parcel polygon and attributes were read from URA's authoritative map feature
+                service (<code>maps.ura.gov.sg/.../lsag/ura_sale_sites</code>) and reprojected from
+                SVY21 (EPSG:3414) to WGS84.
+              </li>
+              <li>
+                Every parcel's official attributes (site area, GPR, units, sales agent, development
+                type) were <strong>cross-checked against the PDF</strong> and matched exactly. All
+                nine sites are shown as <strong>verified polygons</strong>; none are approximated.
+              </li>
+              <li>
+                Any site that could not be fully verified would be visibly flagged on its marker,
+                card, and detail panel. <strong>No sites are currently flagged.</strong>
+              </li>
+              <li>
+                This is an <strong>informational visualisation</strong>. Official tender and
+                planning decisions should be based on URA / MND documentation and the detailed
+                conditions of sale for each parcel.
+              </li>
+            </ul>
+            <p class="basemap-note">
+              Basemap: <a href="https://www.onemap.gov.sg/" target="_blank" rel="noopener">OneMap</a>
+              © contributors, Singapore Land Authority (free public tiles, no API key). OpenStreetMap
+              is offered as a fallback layer.
+            </p>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>
+        Built for informational purposes from public URA data. Not affiliated with or endorsed by
+        URA, HDB, or the Singapore Government.
+      </p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

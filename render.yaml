@@ -1,0 +1,20 @@
+# Render Blueprint — Static Site
+# Docs: https://render.com/docs/blueprint-spec
+#
+# Single-page interactive map. No backend, no database, no environment
+# variables, no client-side secrets. No rewrite rules are needed because the
+# app has no client-side routing (a single index.html is served).
+services:
+  - type: web
+    name: sg-gls-2h2026-map
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    autoDeployTrigger: commit
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
