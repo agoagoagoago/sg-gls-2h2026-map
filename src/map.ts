@@ -37,8 +37,8 @@ export class SiteMap {
       zoom: 12,
       minZoom: 11,
       maxZoom: 19,
-      maxBounds: SG_BOUNDS.pad(0.5),
-      maxBoundsViscosity: 0.7,
+      maxBounds: SG_BOUNDS.pad(0.05),
+      maxBoundsViscosity: 1.0,
       zoomControl: true,
       // Default keyboard panning is on; we add feature-level keyboard support below.
     });
