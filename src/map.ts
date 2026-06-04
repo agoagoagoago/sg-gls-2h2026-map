@@ -185,8 +185,6 @@ export class SiteMap {
   }
 
   private popupHtml(site: Site, kind: Kind): string {
-    const verifyClass = site.verificationStatus === "verified" ? "ok" : "warn";
-    const verifyLabel = site.verificationStatus === "verified" ? "Verified" : site.verificationStatus;
     const rows: Array<[string, string]> = [
       ["Category", esc(site.category)],
       ...(site.subtype ? [["Subtype", esc(site.subtype)] as [string, string]] : []),
@@ -210,7 +208,6 @@ export class SiteMap {
       `<p class="popup-sub">${esc(kindLabel(kind))}</p></div></div>` +
       `<dl class="popup-grid">${dl}</dl>` +
       cond +
-      `<p class="popup-verify ${verifyClass}">Location: <strong>${esc(verifyLabel)}</strong></p>` +
       `<p class="popup-links">` +
       `<a href="${esc(site.officialLocationUrl)}" target="_blank" rel="noopener">Official URA site map ↗</a>` +
       (site.officialSitePageUrl
